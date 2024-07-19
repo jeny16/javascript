@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>appendlist</title>
+</head>
+<body>
+    <label for="c1">CITY OF GUJARAT:</label>
+    <select name="" id="c1">
+        <option value="">SELECT</option>
+        <option value="AHMEDABAD">AHMEDABAD</option>
+        <option value="SURAT">SURAT</option>
+        <option value="VADODARA">VADODARA</option>
+    </select>
+    <br><br>
+    <label for="c2">CITY OF MAHARASHTRA:</label>
+    <select name="" id="c2">
+        <option value="">SELECT</option>
+        <option value="">MUMBAI</option>
+        <option value="">NASHIK</option>
+        <option value="">PUNE</option>
+    </select>
+
+    <script>
+    
+        const c1Select = document.getElementById("c1");
+        const c2Select = document.getElementById("c2");
+
+        c1Select.addEventListener("change", function () {
+
+            c2Select.appendChild(c1Select.options[c1Select.selectedIndex].cloneNode(true));
+            c1Select.selectedIndex = 0;
+        });
+    </script>
+</body>
+</html> 

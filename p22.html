@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function hians()
+        {
+            let a=document.getElementById("txtno").value;
+        
+        if(a % 2 == 0){
+            document.getElementById("txtans").value="number is even";
+
+        }
+
+        else{
+            document.getElementById("txtans").value="number is odd";
+        }
+        }
+    </script>
+
+<form>
+    <label for="number">a:</label>
+    <input type="number" id="txtno" ><br><br>
+
+    <input type="button" onclick="hians()" value="Click me"> <br><br>   
+
+    <label for="ans">ANS:</label>
+    <input type="text" name="text" id="txtans"><br><br>
+</form>
+
+</body>
+</html>

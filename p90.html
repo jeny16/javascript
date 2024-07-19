@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+</head>
+<body>
+    <label for="i1">NAME:</label>
+    <input type="text" id="i1"> <br><br>
+
+    <label for="p1">PASSWORD:</label>
+    <input type="password" id="t1"> <br><br>
+
+    <label for="p2">REPASSWD:</label>
+    <input type="password" id="t2"> <br><br>
+
+    <label for="p3">EMAIL:</label>
+    <input type="text" id="e1"> <br><br>
+
+    <label for="p4">CONTACT:</label>
+    <input type="number" id="c1"> <br><br>
+
+    <label for="">GENDER:</label> <br>
+
+    <label for="m">MALE</label>
+    <input type="radio" name="gender" value="male" id="gen"> <br>
+
+    <label for="f">FEMALE</label>
+    <input type="radio" name="gender" value="female" id="gen"> <br><br>
+
+    <label for="">HOBBIES:</label> <br> 
+
+    <label for="">DANCE</label>
+    <input type="checkbox" name="hobby" value="dance" id="cec"> <br>
+    <label for="">SING</label>
+    <input type="checkbox" name="hobby" value="sing" id="cec"> <br>
+    <label for="">READ</label>
+    <input type="checkbox" name="hobby" value="read" id="cec"> <br> <br>
+    <label for="">CITY:</label>
+    <select id="sel">
+        <option value="select">SELECT</option>
+        <option value="Ahmedabad">AHMEDABAD</option>
+        <option value="Surat">SURAT</option>
+        <option value="Amreli">AMRELI</option>
+    </select>
+    <br><br>
+    <input type="button" value="CLICK ME" onclick="hi1()">
+
+    <script>
+        function hi1() {
+            let inputValue = document.getElementById("i1").value;
+            let p1 = document.getElementById("t1").value;
+            let p2 = document.getElementById("t2").value;
+            let e1 = document.getElementById("e1").value;
+            let c1 = document.getElementById("c1").value;
+            let gender = document.querySelector('input[name="gender"]:checked');
+            let hobbies = document.querySelectorAll('input[name="hobby"]:checked');
+            let select = document.getElementById("sel").value;
+
+            if (inputValue === "") {
+                alert("* ENTER YOUR NAME *");
+            }
+            else if(p1 == p2 == ""){
+                alert("enter your password!! ")
+            }
+            else if (p1 !== p2){
+                alert("* Check your password! *");
+            }
+            else if (e1.length <= 10 || e1.indexOf('@') === -1 || e1.indexOf('.') === -1){
+                alert("* Error in email! *");
+            }
+            else if (c1.length !== 10){
+                alert("* Please enter a valid mobile number! *");
+            }
+            else if (!gender) {
+                alert("* Please select a gender! *");
+            }
+            else if (hobbies.length === 0) {
+                alert("* Please select at least one hobby! *");
+            }
+            else if (select === "select"){
+                alert("* Please select your city! *");
+            }
+            else {
+                alert("Done");
+            }   
+        }
+    </script>
+</body>
+</html>

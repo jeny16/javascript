@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Uppercase Input Only for uc and lc</title>
+</head>
+<body>
+
+<script>
+    
+    function handleInput(event){
+        let b = event.keyCode;
+        
+        if(b >= 65 && b <= 90)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }      
+    
+    function handleInput1(event){
+        let b = event.keyCode;
+        
+        if(b >= 65 && b <= 90)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+</script>
+
+<label for="nm">STRING: </label>
+<input type="text" id="nm" onkeypress="return handleInput(event)"> <br><br><br>
+
+<label for="nm1">STRING: </label>
+<input type="text" id="nm1" onkeypress="return handleInput1(event)"> <br><br><br>
+
+
+</body>
+</html>

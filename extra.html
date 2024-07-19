@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD GAME</title>
+</head>
+<body>
+    <style>
+        .main {
+            margin: 20px;
+        }
+
+        .crd {
+            align-content: center;
+            border: 2px solid black;
+            border-radius: 4px;
+            margin-left: 40px;
+            justify-content: center;
+            cursor: pointer; /* Add cursor style to indicate cards are clickable */
+        }
+
+        #bt {
+            margin-left: 60px;
+            padding: 4px;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+    </style>
+
+    <script>
+        let selectedCards = [];
+
+        function flipCard(index, value) {
+            const card = document.images[index];
+            
+            if (selectedCards.length < 2) {
+                // Flip the card
+                card.src = `solatair/${value}.jpg`;
+                selectedCards.push({ index, value });
+
+                // Disable clicks on the selected card
+                card.onclick = null;
+
+                if (selectedCards.length === 2) {
+                    // Check for a match after two cards are selected
+                    if (selectedCards[0].value === selectedCards[1].value) {
+                        // Disable the matched cards
+                        disableCards();
+                    } else {
+                        // Flip the unmatched cards back after a short delay
+                        setTimeout(() => {
+                            flipBackCards();
+                        }, 1000);
+                    }
+                }
+            }
+        }
+
+        function disableCards() {
+            for (const card of selectedCards) {
+                document.images[card.index].onclick = null;
+            }
+            selectedCards = [];
+        }
+
+        function flipBackCards() {
+            for (const card of selectedCards) {
+                document.images[card.index].src = 'solatair/back.jpg';
+                document.images[card.index].onclick = () => flipCard(card.index, card.value);
+            }
+            selectedCards = [];
+        }
+    </script>
+    
+    <form>
+        <div class="main">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(0, 'a')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(1, 'a2')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(2, 'b1')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(3, 'bb')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(4, 'c')"> <br><br><br>
+
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(5, 'a')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(6, 'a2')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(7, 'b1')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(8, 'bb')">
+            <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="flipCard(9, 'c')">
+        </div>
+        <div>
+            <input type="button" value="CLICK ME" id="bt">
+        </div>
+    </form>
+</body>
+</html>

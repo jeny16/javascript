@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image_1</title>
+</head>
+<body>
+    <script>
+        function hiimage1(){
+            document.images[0].src = "download.png"
+        }
+
+        function hiimage2(){
+            document.images[0].src ="2download.jpg"
+        }
+        function hiimage3(){
+            document.images[0].src ="download (2).png"
+        }
+        function hiimage4(){
+            document.images[0].src ="download (1).png"
+        }
+
+    </script>
+    <FORM>
+    <tr>
+        <td><input type="button" value="INDIA" id="ind" onclick="hiimage1()"></td>
+        <td><input type="button" value="USA" id="us" onclick="hiimage2()"> </td>
+        <td><input type="button" value="ENGLAND" id="eng" onclick="hiimage3()"> </td>
+        <td><input type="button" value="AUSTRALIA" id="aus" onclick="hiimage4()"> </td>
+    </tr>
+    <br><br><br>
+    <tr>
+        <td colspan="4"><img height="150" width="300"></td>
+    </tr>
+</FORM>
+</body>
+</html>

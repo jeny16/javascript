@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio 2</title>
+</head>
+<body>
+    <script>
+        function add(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = (a + b);
+        }
+        function sub(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = (a - b);
+        }
+        function mul(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = (a*b);
+        }
+        function div(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = a/b;
+        }
+    </script>
+
+    <label for="">NUM1:</label>
+    <input type="text" id="inp1"> <br><br>
+    <label for="">NUM2:</label>
+    <input type="text" id="inp2"> <br><br>
+
+    <label for="rb1">ADD(+)</label>
+    <input type="radio" id="rb1" name="op" onclick="add()"> <br><br>
+    <label for="rb2">SUB(-)</label>
+    <input type="radio" id="rb2" name="op" onclick="sub()"> <br><br>
+    <label for="rb3">MUL(*)</label>
+    <input type="radio" id="rb3" name="op" onclick="mul()"> <br><br>
+    <label for="rb4">DIV(/)</label>
+    <input type="radio" id="rb4" name="op" onclick="div()"> <br><br>
+
+    <label for="">ANS:</label>
+    <input type="text" id="res">
+</body>
+</html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIC TAC TOE</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .btn {
+            width: 100px;
+            height: 100px;
+            font-size: 36px;
+            border-bottom: 1px solid black;
+            border-right: 1px solid black;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .btn:last-child {
+            border-right: none;
+        }
+
+        .btn:nth-child(3),
+        .btn:nth-child(6) {
+            border-bottom: none;
+        }
+
+        #area {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0;
+            padding: 10px;
+        }
+
+        .btn:nth-child(1),.btn:nth-child(2),.btn:nth-child(3){
+           border-top: none; 
+        }
+
+        .btn:nth-child(1),.btn:nth-child(7),.btn:nth-child(4){
+            border-left: none;
+
+        }
+
+        .btn:nth-child(7),.btn:nth-child(8),.btn:nth-child(9){
+            border-bottom: none;
+        }
+
+        .btn:nth-child(3),.btn:nth-child(6){
+            border-right: none;
+        }
+
+        #print{
+           margin-top: 400px;
+            position: absolute;
+        }
+
+        #re{
+           
+            margin-right: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <script>
+        let a=1;
+            
+            function hi1(){
+                if(a%2==0)
+                {
+                    document.getElementById("p1").value="O";
+                }
+                else
+                {
+                    document.getElementById("p1").value="X";
+                }
+                a++;
+                document.getElementById("p1").disabled=true ;
+                chkwinner();
+            }
+
+            function hi2(){
+                if(a%2==0)
+                {
+                    document.getElementById("p2").value="O";
+                }
+                else
+                {
+                    document.getElementById("p2").value="X";
+                }
+                a++;
+                document.getElementById("p2").disabled=true ;
+                chkwinner();
+            }
+
+            function hi3(){
+                if(a%2==0)
+                {
+                    document.getElementById("p3").value="O";
+                }
+                else
+                {
+                    document.getElementById("p3").value="X";
+                }
+                a++;
+                document.getElementById("p3").disabled=true ;
+                chkwinner();
+            }
+
+            function hi4(){
+                if(a%2==0)
+                {
+                    document.getElementById("p4").value="O";
+                }
+                else
+                {
+                    document.getElementById("p4").value="X";
+                }
+                a++;
+                document.getElementById("p4").disabled=true ;
+                chkwinner();
+            }
+
+            function hi5(){
+                if(a%2==0)
+                {
+                    document.getElementById("p5").value="O";
+                }
+                else
+                {
+                    document.getElementById("p5").value="X";
+                }
+                a++;
+                document.getElementById("p5").disabled=true ;
+                chkwinner();
+            }
+
+            function hi6(){
+                if(a%2==0)
+                {
+                    document.getElementById("p6").value="O";
+                }
+                else
+                {
+                    document.getElementById("p6").value="X";
+                }
+                a++;
+                document.getElementById("p6").disabled=true ;
+                chkwinner();
+            }
+
+            function hi7(){
+                if(a%2==0)
+                {
+                    document.getElementById("p7").value="O";
+                }
+                else
+                {
+                    document.getElementById("p7").value="X";
+                }
+                a++;
+                document.getElementById("p7").disabled=true ;
+                chkwinner();
+            }
+
+            function hi8(){
+                if(a%2==0)
+                {
+                    document.getElementById("p8").value="O";
+                }
+                else
+                {
+                    document.getElementById("p8").value="X";
+                }
+                a++;
+                document.getElementById("p8").disabled=true ;
+                chkwinner();
+            }
+
+            function hi9(){
+                if(a%2==0)
+                {
+                    document.getElementById("p9").value="O";
+                }
+                else
+                {
+                    document.getElementById("p9").value="X";
+                }
+                a++;
+                document.getElementById("p9").disabled=true ;
+                chkwinner();
+            }
+            
+            
+
+            function chkwinner()
+            {
+            
+            let p1btn=document.getElementById("p1").value;
+            let p2btn=document.getElementById("p2").value;
+            let p3btn=document.getElementById("p3").value;
+            let p4btn=document.getElementById("p4").value;
+            let p5btn=document.getElementById("p5").value;
+            let p6btn=document.getElementById("p6").value;
+            let p7btn=document.getElementById("p7").value;
+            let p8btn=document.getElementById("p8").value;
+            let p9btn=document.getElementById("p9").value;
+            
+            if((p1btn == "X" && p2btn == "X" && p3btn == "X") ||
+               (p1btn == "X" && p5btn == "X" && p9btn == "X") ||
+               (p1btn == "X" && p4btn == "X" && p7btn == "X") ||
+               (p2btn == "X" && p5btn == "X" && p8btn == "X") ||
+               (p3btn == "X" && p5btn == "X" && p7btn == "X") ||
+               (p3btn == "X" && p6btn == "X" && p9btn == "X") ||
+               (p4btn == "X" && p5btn == "X" && p6btn == "X") ||
+               (p7btn == "X" && p8btn == "X" && p9btn == "X"))
+                    {
+                document.getElementById("span1").innerHTML="PLAYER X IS WINNER.";
+                
+            }
+            else if(
+                (p1btn == "O" && p2btn == "O" && p3btn == "O") ||
+                (p1btn == "O" && p5btn == "O" && p9btn == "O") ||
+                (p1btn == "O" && p4btn == "O" && p7btn == "O") ||
+                (p2btn == "O" && p5btn == "O" && p8btn == "O") ||
+                (p3btn == "O" && p5btn == "O" && p7btn == "O") ||
+                (p3btn == "O" && p6btn == "O" && p9btn == "O") ||
+                (p4btn == "O" && p5btn == "O" && p6btn == "O") ||
+                (p7btn == "O" && p8btn == "O" && p9btn == "O")
+            )
+            {
+                document.getElementById("span1").innerHTML="PLAYER O IS WINNER";
+            }
+            else if (
+            p1btn != "" && p2btn != "" && p3btn != "" &&
+            p4btn != "" && p5btn != "" && p6btn != "" &&
+            p7btn != "" && p8btn != "" && p9btn != "") 
+        {
+        document.getElementById("span1").innerHTML = "IT'S A DRAW!";
+        }
+          
+            function rearr() {
+            let p1btn=document.getElementById("p1").value="";
+            let p2btn=document.getElementById("p2").value="";
+            let p3btn=document.getElementById("p3").value="";
+            let p4btn=document.getElementById("p4").value="";
+            let p5btn=document.getElementById("p5").value="";
+            let p6btn=document.getElementById("p6").value="";
+            let p7btn=document.getElementById("p7").value="";
+            let p8btn=document.getElementById("p8").value="";
+            let p9btn=document.getElementById("p9").value="";
+            }
+
+          } 
+            
+        </script>
+
+    <div id="area">
+        <input type="button" value="" id="p1" class="btn" onclick="hi1()">
+        <input type="button" value="" id="p2" class="btn" onclick="hi2()">
+        <input type="button" value="" id="p3" class="btn" onclick="hi3()">
+        <input type="button" value="" id="p4" class="btn" onclick="hi4()">
+        <input type="button" value="" id="p5" class="btn" onclick="hi5()">
+        <input type="button" value="" id="p6" class="btn" onclick="hi6()">
+        <input type="button" value="" id="p7" class="btn" onclick="hi7()">
+        <input type="button" value="" id="p8" class="btn" onclick="hi8()">
+        <input type="button" value="" id="p9" class="btn" onclick="hi9()">
+    </div>
+    <br><br>
+    
+    <div id="print">
+        <span id="span1"></span><br><br>
+   
+        <button type="RESET" onclick="rearr()" id="re">RESET</button>
+    </div>
+
+    
+</body>
+</html>
+

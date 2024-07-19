@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BILLBOARD AD</title>
+</head>
+<body>
+    <style>
+    .billboard-image{
+        border: 5px solid black;
+    }
+    </style>
+    <script>
+         function chg(){
+            const img = document.querySelector("img");
+            const imgSources = ["images/ad1.jpg", "images/ad2.jpg", "images/ad3.jpg"];
+            img.src = imgSources[Math.floor(Math.random() * imgSources.length)];
+        }
+        setInterval(chg,2000);
+    </script>
+    <div class="billboard">
+            <img src="images/ad1.jpg"class="billboard-image" width="800" height="400" alt="adv">
+    </div>
+</body>
+</html>

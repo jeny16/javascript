@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        function sl(){
+            const operation = document.getElementById("op").value;
+            if (operation === "square") {
+                sq();
+            } else if (operation === "root") {
+                rt();
+            }else if(operation == "select"){
+                document.getElementById("res1").innerHTML="error!!"
+            }
+        }
+         function sq(){
+            let a = parseInt(document.getElementById("inp1").value);
+
+            document.getElementById("res").value = (a*a);
+        }
+        function rt(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = Math.sqrt(a);
+            document.getElementById("res").value=b;
+        }
+        
+    </script>
+    <h1>SQUARE AND ROOT</h1>
+    <label for="">NUM1:</label>
+    <input type="text" id="inp1"> <br><br>
+
+    <label for="operation">CHOOSE A OPERATION:</label>
+    <select name="operation" id="op" onchange="sl()">
+    <option value="select">SELECT</option>
+    <option value="square">SQUARE</option>
+    <option value="root">ROOT</option> 
+</select> <br><br>
+    <label for="">ANS:</label>
+    <input type="text" id="res">
+
+    <br><br>
+    <span id="res1"></span>
+</body>
+</html>

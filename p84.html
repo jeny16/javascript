@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DROP DOWN 4</title>
+</head>
+<body>
+    <script>
+        function hi(){
+            const color = document.getElementById("op").value;
+            if (color === "app") {
+                ap();
+            } else if (color === "ava") {
+                ava();
+            } else if (color === "dic") {
+                dic();
+            } else if (color === "tap") {
+                tap();
+            }
+        }
+
+        function ap(){
+            document.images[0].src = "images/apple.jpeg";
+        }
+        function ava(){
+            document.images[0].src = "images/avaca.jpeg";
+        }
+        function dic(){
+            document.images[0].src = "images/dic.jpg";
+        }
+        function tap(){
+            document.images[0].src = "images/tape.jpeg";
+        }
+    </script>
+    <br><br>
+    <label for="clr">CHOOSE :</label>
+    <select name="clr" id="op" onchange="hi()">
+    <option value="select">SELECT</option>
+    <option value="app">apple</option>
+    <option value="ava">avacardo</option> 
+    <option value="dic">dice</option> 
+    <option value="tap">tape</option> 
+    </select> <br><br>
+    <img width="400" height="200" alt="">
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uppercase Input Only</title>
+</head>
+<body>
+
+<script>
+    
+    function handleInput(event) {
+        const inputElement = event.target;
+        const inputValue = inputElement.value;
+        const uppercaseValue = inputValue.replace(/[^A-Z\s]/g, ''); // Include \s for space
+        inputElement.value = uppercaseValue;
+    }
+</script>
+
+<label for="nm">STRING: </label>
+<input type="text" id="nm" oninput="handleInput(event)"> <br><br><br>
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drop down 5</title>
+</head>
+<body>
+    <script>
+        function hi(){
+            const color = document.getElementById("op").value;
+            if (color === "yt") {
+                window.location.href = "https://www.youtube.com/";
+            } else if (color === "insta") {
+                window.location.href = "https://www.instagram.com/";
+            }
+            else if(color === "x"){
+                window.location.href = "https://www.twitter.com/";
+            }
+        }
+
+        
+    </script>
+
+<label for="clr">CHOOSE :</label>
+<select name="clr" id="op" onchange="hi()">
+<option value="select">SELECT</option>
+<option value="yt">YOU TUBE</option>
+<option value="insta">INSTAGRAM</option> 
+<option value="x">TWITTER</option> 
+</select> <br><br>
+
+</body>
+</html>

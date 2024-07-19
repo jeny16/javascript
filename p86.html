@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chkbox 1</title>
+</head>
+<body>
+    <script>
+        function hi1(){
+            document.getElementById("res").innerHTML="DANCE";
+        }
+        function hi2(){
+            document.getElementById("res").innerHTML="SING";
+        }function hi3(){
+            document.getElementById("res").innerHTML="MUSIC";
+        }function hi4(){
+            document.getElementById("res").innerHTML="WRITE";
+        }
+    </script>
+
+    <label for="">HOBBIES:</label> <br><br>
+    <label for="">DANCE</label>
+
+    <input type="checkbox" name="" id="dance" onchange="hi1()"> <br>
+    <label for="">SING</label>
+    <input type="checkbox" name="" id="sing" onchange="hi2()">   <br>
+    <label for="">MUSIC</label>
+    <input type="checkbox" name="" id="music" onchange="hi3()"> <br>
+    <label for="">WRITE</label>
+    <input type="checkbox" name="" id="write" onchange="hi4()"> <br> <br>
+
+    <span id="res"></span>
+</body>
+</html>

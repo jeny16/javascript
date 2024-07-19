@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form align="center">
+        <h1>Product & Category</h1>
+        <label><b>Product Name:</b></label><br>
+        <input type="text" name="productName" id="txtproname" placeholder="Enter Product Name.."><br>
+        <label><b>Product Image:</b></label><br>
+        <input type="text" name="productImage" id="txtproimg" placeholder="Enter Product Image.."><br>
+        <label><b>Category Id:</b></label><br>
+        <select name="products" id="drpCatid">
+            <option>Select Category ID</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select><br>
+        <label><b>Price:</b></label><br>
+        <input type="text" name="price" id="txtprice" placeholder="Enter Price.."><br>
+        <button>Click Me</button>
+    </form><br>
+    <table width="100%" border="1" rules="all">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Name</th>
+                <th>Product Image</th>
+                <th>Category Id</th>    
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        let form=document.querySelector("form");
+        form.addEventListener("submit",(event)=>{
+            let name=event.target.productName.value;
+            let image=event.target.productImage.value;
+            let catId=event.target.products.value;
+            let price=event.target.price.value;
+            let proObj={name,image,catId,price};
+
+            let proData=JSON.parse(localStorage.getItem("prouserrdata")) ?? []
+            proData.push(proObj);
+
+            localStorage.setItem("prouserrdata",JSON.stringify(proData));
+
+            event.target.reset();
+            categoryData();
+            event.preventDefault();
+        })
+        let tbody=document.querySelector("table tbody")
+        let categoryData=()=>{
+            let proData=JSON.parse(localStorage.getItem("prouserrdata")) ?? []
+            let rows='';
+            proData.forEach((v,i)=>{
+                rows+=`
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${v.name}</td>
+                        <td><img src="${v.image}" height='100px' width='100px'></td>
+                        <td>${v.catId}</td>
+                        <td>${v.price}</td>
+                    </tr>
+                `
+            })
+            tbody.innerHTML=rows;
+        }
+        categoryData()
+    </script>
+</body>
+</html>

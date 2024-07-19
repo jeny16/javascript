@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXTRAAAAAAAA</title>
+</head>
+<body>
+    <form align="center" id="loginForm">
+        <h1>Login Page</h1>
+        <label><b>Username:</b></label><br>
+        <input type="text" name="uname" id="txtname" placeholder="Enter Name.."><br>
+        <label><b>Password:</b></label><br>
+        <input type="password" name="pass" id="txtpass" placeholder="Enter Password.."><br>
+        <p><a href="#">Forgot password??</a></p><br>
+        <button type="submit">LOGIN</button>
+    </form><br>
+    <table width="100%" border="1" rules="all">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Password</th>
+                <th>Delete</th>
+                <th>Update</th>
+            </tr>
+        </thead>
+        <tbody id="userDataBody">
+
+        </tbody>
+    </table>
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            let name = event.target.uname.value;
+            let password = event.target.pass.value;
+
+            let oldData = JSON.parse(localStorage.getItem("userdata")) || [];
+            let checkData = oldData.find((v) => v.name === name && v.password === password);
+
+            if (checkData) {
+                alert("Welcome");
+            } else {
+                alert("Invalid credentials");
+            }
+
+            event.target.reset();
+            getData();
+        });
+
+        let tbody = document.getElementById("userDataBody");
+
+        let getData = () => {
+            let oldData = JSON.parse(localStorage.getItem("userdata")) || [];
+            let rows = '';
+
+            oldData.forEach((v, i) => {
+                rows += `
+                    <tr>
+                        <td>${i + 1}</td>
+                        <td>${v.name}</td>
+                        <td>${v.email}</td>
+                        <td>${v.phone}</td>
+                        <td>${v.gender}</td>
+                        <td>${v.password}</td>
+                        <td>
+                            <button onclick="deleteUser(${i})">Delete</button>
+                        </td>
+                        <td>
+                            <button onclick="editUser(${i})">Edit</button>
+                        </td>
+                    </tr>`;
+            });
+
+            tbody.innerHTML = rows;
+        };
+
+        let deleteUser = (index) => {
+            let oldData = JSON.parse(localStorage.getItem("userdata")) || [];
+            oldData.splice(index, 1);
+            localStorage.setItem("userdata", JSON.stringify(oldData));
+            getData();
+        };
+
+        let editUser = (index) => {
+            // You can implement the edit functionality here
+            // For example, you can pre-fill the form with existing data and allow the user to modify it.
+            console.log("Edit user with index: ", index);
+        };
+
+        getData();
+    </script>
+</body>
+</html>

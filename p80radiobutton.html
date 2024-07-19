@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radio button</title>
+</head>
+<body>
+    <script>
+        function sq(){
+            let a = document.getElementById("inp").value;
+            document.getElementById("res").value = a*a;
+        }
+        function cu(){
+            let b = document.getElementById("inp").value;
+            document.getElementById("res").value = b*b*b;
+        }
+    </script>
+
+    <label for="">NUM:</label>
+    <input type="text" id="inp"> <br><br>
+
+    <label for="">SQUARE</label>
+    <input type="radio" id="rb1" name="op" onclick="sq()"> <br><br>
+    <label for="">CUBE</label>
+    <input type="radio" id="rb2" name="op" onclick="cu()"> <br><br>
+
+    <label for="">ANS:</label>
+    <input type="text" id="res">
+</body>
+</html>

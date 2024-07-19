@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function hians()
+        {
+            var p=parseInt(document.getElementById("txtno1").value);
+            var c=parseInt(document.getElementById("txtno2").value);
+            var m=parseInt(document.getElementById("txtno3").value);
+            
+            document.getElementById("spantotal").innerHTML=p+c+m;
+            document.getElementById("spanpr").innerHTML=((p+c+m)*100)/300;
+            let percentage=((p+c+m)*100)/300;
+
+        if(percentage < 50){
+                 document.getElementById("spangd").innerHTML="C grade.";
+        }
+        
+        else if(50 < percentage < 70){
+            document.getElementById("spangd").innerHTML="B grade.";
+        }
+        else if(100 > percentage > 70)
+        {
+            document.getElementById("spangd").innerHTML="A grade.";
+        }
+
+        }
+
+         </script>
+
+<form>
+    <label for="physics">PHYSICS:</label>
+    <input type="text" id="txtno1" ><br><br>
+    
+    <label for="chemistry">CHEMISTRY:</label>
+    <input type="text" id="txtno2" ><br><br>
+
+    <label for="maths">MATHS:</label>
+    <input type="text" id="txtno3" ><br><br>
+    
+    
+    <input type="button" value="CLICK ON ME" onclick="hians();"><br><br>
+
+    TOTAL: <span id="spantotal"></span><br><br>
+    
+    PERCENTAGE: <span id="spanpr"></span><br><br>
+    
+    GRADE: <span id="spangd"></span><br><br>
+    
+    
+    <!-- <label for="ans">AVERAGE:</label>
+    <input type="text" name="text" id="txtans"><br><br> -->
+</form>
+
+</body>
+</html>

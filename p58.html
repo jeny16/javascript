@@ -1,0 +1,52 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ABCD...</title>
+    </head>
+    <body>
+        <SCRIPT>
+            function hi1(event){
+                let zx = event.key;      
+
+                if (zx === 'a' || zx ==='A') {
+                    document.getElementById("len").innerHTML="apple";
+                }
+                else if (zx === 'b' || zx ==='B') {
+                    document.getElementById("len").innerHTML = "ball";
+                }
+                else if (zx === 'c' || zx ==='C') {
+                    document.getElementById("len").innerHTML= "cat";
+                }
+                else if (zx === 'd' || zx ==='D') {
+                    document.getElementById("len").innerHTML = "dog";
+                }
+                else if (zx === 'e' || zx ==='E') {
+                    document.getElementById("len").innerHTML = "elephant";
+                }
+                else if (zx === 'f' || zx ==='F') {
+                    document.getElementById("len").innerHTML = "fish";
+                }
+                else if (zx === 'g' || zx === 'G') {
+                    document.getElementById("len").innerHTML = "goat";
+                }
+                else if (zx === 'h' ||  zx ==='H') {
+                    document.getElementById("len").innerHTML = "height";
+                }
+                else if (zx === 'i' ||  zx ==='I') {
+                    document.getElementById("len").innerHTML = "ice";
+                }
+                else{
+                    document.getElementById("len").innerHTML="error!!";
+                }
+            }
+        </SCRIPT>
+
+        <label for="nm1">ENTER A LETTER : </label>
+        <input type="text" id="nm" onkeypress="hi1(event)" maxlength="1"> <br><br>
+
+        <span id="len">:</span>
+    </body>
+    </html>

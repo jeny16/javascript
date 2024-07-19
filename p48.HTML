@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print NOT SAME LETTER!!!!!!</title>
+</head>
+<body>
+    <script>
+        function hichar(){
+
+            let a=document.getElementById("str").value;
+            let b=document.getElementById("idx").value;
+            let c=""; 
+            let char1="";
+            let char2="";
+            
+            
+            var len1=a.length;
+            var len2=b.length;
+
+            for(let i=0;i<len1;i++)
+            {
+                char1=a.charAt(i);
+            
+            
+                for(let j=0;j<len2;j++){
+                char2=b.charAt(i);
+                }
+            
+                 if(char1 !== char2){
+                c += (char1 + char2);
+                }
+        }
+            document.getElementById("span1").innerHTML=c;
+        
+        }
+
+</script>
+
+<label for="string">A:</label>
+<input type="text" id="str"><br><br>
+
+<label for="string">B:</label>
+<input type="text" id="idx"><br><br>
+
+<input type="button" value="CLICKME" onclick="hichar()"> <br><br>
+
+NOT SAME LETTERS: <br>
+<span id="span1"></span><br><br> 
+
+</body>
+</html>
+

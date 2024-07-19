@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1!!</title>
+</head>
+<body>
+    <script>
+        fetch("p99ajax.json")
+        .then(response=>response.json())
+        .then((data)=>{
+        for(var x in data)
+        
+        {
+        let a=(`${data[x].roll_number} - ${data[x].name} - ${data[x].standard} -
+        ${data[x].gender} <br>`);
+        document.write(a);
+        }
+        })
+        .catch((error) => console.log(error));
+        </script>
+        
+        
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+
+    function hians()
+    {
+        let a=document.getElementById("txtno").value;
+        document.getElementById("txtans").value=a*a;
+    }
+
+</script>
+<body>
+    
+    <form>
+        <label for="number">NO:</label>
+        <input type="number" id="txtno" ><br><br>
+
+        <input type="button" onclick="hians()" value="Click me"> <br>
+
+        <label for="ans">ANS:</label>
+        <input type="text" name="text" id="txtans"><br><br>
+    </form>
+</body>
+</html>

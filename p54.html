@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONKEYPRESS</title>
+</head>
+<body>
+    <script>
+        function copyText(event) {
+            if (event.key !== 'Enter') {
+                let a = document.getElementById("i1").value;
+                let b = document.getElementById("i2");
+
+                b.value = a;
+            }
+        }
+    </script>
+
+    <label for="i1">1:</label>
+    <input type="text" id="i1" oninput="copyText(event)"> <br><br>
+
+    <label for="i2">2:</label>
+    <input type="text" id="i2"> <br><br>
+
+</body>
+</html>

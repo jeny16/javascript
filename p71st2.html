@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SET-TIME OUT 2</title>
+</head>
+<body>
+    <script>
+         function chg(){
+            const img = document.querySelector("img");
+            const imgSources = ["images/download (1).png", "images/download (2).png", "images/download.png" ,];
+            img.src = imgSources[Math.floor(Math.random() * imgSources.length)];
+        }
+        setInterval(chg,2000);
+    </script> 
+    <img src="images/2download.jpg" width="300" height="150"> 
+</body>
+</html>

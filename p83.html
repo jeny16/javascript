@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DROP DOWN 3</title>
+</head>
+<body>
+    <script>
+        function hi(){
+            const color = document.getElementById("op").value;
+            if (color === "add") {
+                rd();
+            } else if (color === "sub") {
+                ble();
+            }
+        }
+
+        function rd(){
+            document.bgColor="red";
+        }
+        function ble(){
+            document.bgColor="blue";
+        }
+    </script>
+    <br><br>
+    <label for="clr">CHOOSE :</label>
+    <select name="clr" id="op" onchange="hi()">
+    <option value="select">SELECT</option>
+    <option value="add">RED</option>
+    <option value="sub">BLUE</option> 
+    </select> <br><br>
+   
+</body>
+</html>

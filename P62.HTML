@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image 3</title>
+</head>
+<body>
+    <script>
+        function hiimg1(){
+            document.images[0].src = "a.jpg"
+            document.images[1].src = "a2.jpg"
+        }
+        function hiimg2(){
+            document.images[0].src = "b.jpg"
+            document.images[1].src = "b2.jpg"
+        }
+        function hiimg3(){
+            document.images[0].src = "c.jpg"
+            document.images[1].src = "c2q.jpg"
+        }
+        function hiimg4(){
+            document.images[0].src = "download.jpg"
+            document.images[1].src = "d2.jpg"
+        }
+        function hiimg5(){
+            document.images[0].src = "e.jpg"
+            document.images[1].src = "e2.jpg"
+        }
+        function hiimg6(){
+            document.images[0].src = "f.jpg"
+            document.images[1].src = "f2.jpg"
+        }
+        function hiswap(){
+        let temp = document.images[0].src ;
+        document.images[0].src = document.images[1].src ;
+        document.images[1].src = temp;  
+        }
+    </script>
+
+    <form>
+                <input type="button" value="A" onclick="hiimg1()">
+                <input type="button" value="B" onclick="hiimg2()">
+                <input type="button" value="C" onclick="hiimg3()">
+                <input type="button" value="D" onclick="hiimg4()">
+                <input type="button" value="E" onclick="hiimg5()">
+                <input type="button" value="F" onclick="hiimg6()">
+                <br><br>
+                <img width="200" height="200">
+                <img src="" width="200" height="200" alt=""> <br><br>
+                <input type="button" value="SWAP" onclick="hiswap()">
+    </form>
+</body>
+</html>
+
+
+<!-- when i click on button image will be swap -->

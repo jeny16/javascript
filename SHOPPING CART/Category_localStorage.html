@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form align="center">
+        <h1>Category</h1>
+        <label><b>Category Name:</b></label><br>
+        <input type="text" name="name" id="txtcat" placeholder="Enter Category Name.."><br>
+        <label><b>Category Image:</b></label><br>
+        <input type="text" name="Image" id="txtimg" placeholder="Enter Image Name.."><br>
+        <button>Click Me</button>
+    </form><br>
+    <table width="100%" border="1" rules="all">
+        <thead>
+            <tr>
+                <th>CatId</th>
+                <th>CatName</th>
+                <th>CatImage</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>    
+        let form=document.querySelector("form");
+        form.addEventListener("submit",(event)=>{
+            let name=event.target.name.value;
+            let image=event.target.Image.value;
+            let catObj={name,image};
+
+            let catData=JSON.parse(localStorage.getItem("catuserrrdata")) ?? []
+            catData.push(catObj);
+
+            localStorage.setItem("catuserrrdata",JSON.stringify(catData));
+
+            event.target.reset();
+            categoryData();
+            event.preventDefault();
+        })
+        let tbody=document.querySelector("table tbody")
+        let categoryData=()=>{
+            let catData=JSON.parse(localStorage.getItem("catuserrrdata")) ?? []
+            let rows='';
+            catData.forEach((v,i)=>{
+                rows+=`
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${v.name}</td>
+                        <td><img src=${v.image} height='100px' width='100px'></td>
+                    </tr>
+                `
+            })
+            tbody.innerHTML=rows;
+        }
+        categoryData()
+    </script>
+</body>
+</html>

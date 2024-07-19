@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GETDATE 1</title>
+</head>
+<body>
+
+    <span id="res"></span>
+
+    <script>
+        const date = new Date();
+        const d = date.getDate();
+        const time = date.getTime();
+        const year = date.getFullYear();
+        const month = date.getMonth();
+        const hour = date.getHours();
+        const minute = date.getMinutes();
+        const sec = date.getSeconds();
+        const result = ` Date: ${d},  <br> Time: ${time}, <br> Year: ${year}, <br> Month: ${month} <br> Hour: ${hour} <br> Minute: ${minute} <br> Second: ${sec}`;
+
+        document.getElementById("res").innerHTML= result ;
+
+    </script>
+    
+</body>
+</html>

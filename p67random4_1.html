@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM NUMBER MINUS!!</title>
+</head>
+<body onload="startQuiz();">
+    <style>
+         header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: -5px;
+        }
+
+    </style>
+    <script>
+    let randomNumber1, randomNumber2, addi;
+    let correctCount = 0;
+    let incorrectCount = 0;
+    let questionCount = 0; 
+    
+    function startQuiz() {
+        correctCount = 0;
+        incorrectCount = 0;
+        questionCount = 0;
+        hiab();
+    }
+
+    function hiab() {
+        randomNumber1 = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+        randomNumber2 = Math.floor(Math.random() * (5 - 1 + 1)) + 1;
+        addi = Math.floor(Math.random() * (10 - 1 + 1)) + 2;
+
+        document.getElementById("txtnum1").value = randomNumber1;
+        document.getElementById("txtnum2").value = randomNumber2;
+        document.getElementById("add").value = addi;
+    }
+
+    function hiad(){
+        let userValue = parseInt(document.getElementById("add").value);
+
+        let c = randomNumber1 - randomNumber2;
+
+        questionCount++; 
+
+        if(c == userValue){
+            document.getElementById("res").innerHTML = "Correct! Next question.";
+            correctCount++; 
+        }
+        else{
+            document.getElementById("res").innerHTML = "Incorrect! Next question.";
+            incorrectCount++; 
+        }
+
+        
+        if (questionCount === 5) {
+            alert("Quiz completed!\nCorrect Answers: " + correctCount + "\nIncorrect Answers: " + incorrectCount);
+            startQuiz();
+        } else {
+            hiab(); 
+        }
+    }
+    </script>
+    <header>
+    <h1>SUBTRACTION</h1>
+    </header>
+    <br><br>
+    <label for="n1">NUM1:</label>
+    <input type="text" id="txtnum1" readonly> <br><br><br>
+    <label for="n2">NUM2:</label>
+    <input type="text" id="txtnum2" readonly> <br><br><br>
+    
+    <label for="add">ADD:</label>
+    <input type="text" id="add"> <br><br>
+
+    <button onclick="hiad()">CLICK ME</button> <br><br>
+
+    <span id="res"> </span> 
+</body>
+</html>

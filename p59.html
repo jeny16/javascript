@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>three textbox</title>
+</head>
+<body>
+    <script>
+        function hi1(event){
+            let a = event.keyCode;
+
+            if(a>=48 && a<=57){
+                return true;
+            }   
+            else{
+                return false;
+            } 
+        }
+
+        function hi2(event){
+            let b = event.keyCode;
+
+            if(b>=48 && b<=57){
+                return true;
+            }
+            else{
+                return false;
+            }  
+        }
+
+       
+        function hians(){
+            let num1 = parseFloat(document.getElementById("num1").value);
+            let num2 = parseFloat(document.getElementById("num2").value);
+            let operator = document.getElementById("num3").value;
+            
+                if (operator === "+") {
+                    document.getElementById("ans").innerHTML= (num1 + num2);
+                } else if (operator === "-") {
+                    document.getElementById("ans").innerHTML= (num1 - num2);
+                } else if (operator === "*") {
+                    document.getElementById("ans").innerHTML= (num1 * num2);
+                } else if (operator === "/") {
+                    document.getElementById("ans").innerHTML= (num1 / num2);
+                } else {
+                    document.getElementById("ans").innerHTML= "Invalid operator";
+                }
+        }
+
+        
+    </script>
+
+    <label for="nm1">ENTER NUMBER1:</label>
+    <input type="text" id="num1" onkeypress="return hi1(event)"> <br><br>
+
+    <label for="nm2">ENTER NUMBER2:</label>
+    <input type="text" id="num2" onkeypress="return hi2(event)"> <br><br>
+
+    <label for="op">ENTER OPERATOR:</label>
+    <input type="text" id="num3" onkeyup="hians()" maxlength="1"> <br><br>
+
+    <!-- <input type="button" value="GET ANS" onclick="hians()"> <br><br>    -->
+
+    ANSWER:
+    <span id="ans"  ></span>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+
+        // h=parseInt(prompt("Enter h =>"))
+        // b=parseInt(prompt("Enter b =>"))
+        // alert("triangle area = " + (h*b*0.5))
+
+function hians()
+{
+    let h=document.getElementById("txtno1").value;
+    let b=document.getElementById("txtno2").value;
+    document.getElementById("txtans").value=h*b*0.5;
+}
+</script>
+
+<form>
+    <label for="number">H:</label>
+    <input type="number" id="txtno1" ><br><br>
+    <label for="number">B:</label>
+    <input type="number" id="txtno2" ><br><br>
+
+    <input type="button" onclick="hians()" value="Click me"> <br><br>
+    
+    <label for="ans">ANS:</label>
+    <input type="text" name="text" id="txtans"><br><br>
+</form>
+
+
+
+<!-- 1 no1 no2 
+2 h*b*0.5
+3 r*r*3.14 -->
+
+</body>
+</html>

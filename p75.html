@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GET DATE 2</title>
+</head>
+<body>
+    <span id="res"></span>
+
+    <script>
+        const date = new Date();
+        const hour = date.getHours();
+        const result = `Hour: ${hour}`;
+
+        if (hour < 6) {
+            document.getElementById("res").innerHTML = "GOOD NIGHT!!!";
+        } else if (hour < 12) {
+            document.getElementById("res").innerHTML = "GOOD MORNING!!!";
+        } else if (hour < 18) {
+            document.getElementById("res").innerHTML = "GOOD AFTERNOON!!!";
+        } else {
+            document.getElementById("res").innerHTML = "GOOD EVENING!!!";
+        }
+        
+    </script>
+</body>
+</html>

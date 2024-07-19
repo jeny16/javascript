@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CARD GAME</title>
+</head>
+<body>
+    <style>
+        .main{
+            margin: 20px;
+        }
+
+        .crd{
+            align-content: center;
+            border: 2px solid black;
+            border-radius: 4px;
+            margin-left: 40px;
+            justify-content: center;
+
+        }
+
+        #bt{
+            margin-left:  60px ;
+            padding: 4px;
+            border: 2px solid black;
+            border-radius: 8px;
+        }
+
+    </style>
+
+    <script>
+
+        function c1(){
+            let temp = document.images[0].src = "solatair/a.jpg";
+            document.images[0].src = temp ;
+        }
+        function c2(){
+            let temp = document.images[1].src = "solatair/a.jpg" ;
+            document.images[1].src = temp ;
+        }
+        function c3(){
+            let temp = document.images[2].src = "solatair/a2.jpg" ;
+            document.images[2].src = temp ;
+        }
+        function c4(){
+            let temp = document.images[3].src = "solatair/c.jpg" ;
+            document.images[3].src = temp ;
+        }
+        function c5(){
+            let temp = document.images[4].src = "solatair/b1.jpg" ;
+            document.images[4].src = temp ;
+
+        }
+        function c6(){
+            let temp = document.images[5].src = "solatair/a2.jpg" ;
+            document.images[5].src = temp ;
+        }
+        function c7(){
+            let temp = document.images[6].src = "solatair/bb.jpg" ;
+            document.images[6].src = temp ;
+        }
+        function c8(){
+            let temp = document.images[7].src = "solatair/a.jpg" ;
+            document.images[7].src = temp ;
+        }
+        function c9(){
+            let temp = document.images[8].src = "solatair/bb.jpg" ;
+            document.images[8].src = temp ;
+        }
+        function c10(){
+            let temp = document.images[9].src = "solatair/c.jpg" ;
+            document.images[9].src = temp ;
+        }
+
+         function chk(){
+        
+                let images = document.querySelectorAll(".crd");
+                for (let i = 0; i < images.length; i++) {
+                    const image = images[i];
+                    let z = image.src;
+
+                for (let j = 0; j < images.length; j++) {
+                    if (images[j] === z) {
+                        image.disabled = true;
+                        images[j].disabled = true;
+                    }
+                    else if (images[j] !== z){
+                        images[j].src = "solatair/back.jpg";
+                        image.src = "solatair/back.jpg";
+                    }
+                } 
+                }
+        }       
+    </script>
+    <form>
+        <div class="main">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c1()">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c2()">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c3()"> 
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c4()">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c5()">
+        <br><br>
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c6()">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c7()">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c8()">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c9()">
+        <img class="crd" width="100" height="150" src="solatair/back.jpg" onclick="c10()">
+    </div>
+    <div>
+        <input type="button" value="CLICK ME" id="bt" onclick="chk()">
+    </div>
+    </form>
+</body>
+</html>
+

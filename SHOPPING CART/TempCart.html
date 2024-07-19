@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShoppingKart</title>
+</head>
+<body>
+    <table width="50%" border="1" rules="all" align="center">
+        <thead>
+            <tr>
+                <th>Product Id</th>
+                <th>Product Quantity</th>
+                <th>Product Name</th>
+                <th>Product Price</th>
+                <th>Product Image</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        let tbody = document.querySelector("table tbody");
+        let totalPrice = 0;
+
+        let TempKart = () => {
+            let CartData = JSON.parse(localStorage.getItem("TempCart")) || [];
+            let row = "";
+
+            CartData.forEach((cartItem) => {
+                row += `<tr>
+                            <td>${cartItem.d}</td>
+                            <td>${cartItem.quant}</td>`;
+
+                prodata = JSON.parse(localStorage.getItem("prouserrdata")) || [];
+                
+                prodata.forEach((v, i) => {
+                    if (cartItem.d == i + 1) {
+                        totalPrice += parseInt(v.price);
+                        row += `<td>${v.name}</td>
+                                <td>${v.price}</td>
+                                <td><img src="${v.image}" height="100px" width="50px"></td>
+                                <td><button onclick="deleteItem(${cartItem.d})">Delete</button></td>
+                                </tr>`;
+                    }
+                });
+            });
+
+            row += `<tr><td colspan="4">Total Price:</td><td>${totalPrice}</td><td></td></tr>`;
+            tbody.innerHTML = row;
+        };
+
+        let deleteItem = (productId) => {
+            let CartData = JSON.parse(localStorage.getItem("TempCart")) || [];
+            
+            let index = CartData.findIndex(item => item.d == productId);
+
+            if (index !== -1) {
+
+                CartData.splice(index, 1);
+                localStorage.setItem("TempCart", JSON.stringify(CartData));
+
+                TempKart();
+            }
+        };
+
+        TempKart();
+    </script>
+</body>
+</html>

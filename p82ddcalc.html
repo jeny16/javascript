@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calc drop down menu</title>
+</head>
+<body>
+    <script>
+        function sl(){
+            const operation = document.getElementById("op").value;
+            if (operation === "add") {
+                add();
+            } else if (operation === "sub") {
+                sub();
+            }
+            else if (operation === "mul") {
+                mul();
+            } else if (operation === "div") {
+                div();
+            }else if(operation == "select"){
+                document.getElementById("res1").innerHTML="error!!"
+            }
+        }
+        function add(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = (a + b);
+        }
+        function sub(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = (a - b);
+        }
+        function mul(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = (a*b);
+        }
+        function div(){
+            let a = parseInt(document.getElementById("inp1").value);
+            let b = parseInt(document.getElementById("inp2").value);
+
+            document.getElementById("res").value = a/b;
+        }
+
+    </script>
+    <h1>CALCULATOR</h1>
+    <label for="">NUM1:</label>
+    <input type="text" id="inp1"> <br><br>
+    <label for="">NUM2:</label>
+    <input type="text" id="inp2"> <br><br>
+
+    <label for="operation">CHOOSE A OPERATION:</label>
+    <select name="operation" id="op" onchange="sl()">
+    <option value="select">SELECT</option>
+    <option value="add">ADD</option>
+    <option value="sub">SUB</option> 
+    <option value="mul">MUL</option> 
+    <option value="div">DIV</option> 
+    </select> <br><br>
+    <label for="">ANS:</label>
+    <input type="text" id="res">
+
+    <br><br>
+    <span id="res1"></span>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOCAL SRORAGE 3</title>
+</head>
+<body>
+    <form align="center">
+        <h1>Sign-Up</h1>
+        <label><b>Enter UserName:</b></label><br>
+        <input type="text" required name="uname"><br>
+        <label><b>Enter Email:</b></label><br>
+        <input type="text" required name="email"><br>
+        <label><b>Enter Phone:</b></label><br>
+        <input type="text" required name="phone"><br>
+        <label><b>Gender:</b></label><br>
+        <label>Male:</label>
+        <input type="radio" name="gender" id="radmale">
+        <label>Female:</label>
+        <input type="radio" name="gender" id="radfemale"><br>
+        <label><b>Password:</b></label><br>
+        <input type="password" name="password" id="txtpass"><br>
+        <label><b>Confirm Password:</b></label><br>
+        <input type="password" name="cpassword" id="txtcpass"><br>
+        <button>Enquire Now</button>
+    </form><br>
+    <!-- <input id="uname" type="text" style="width: 400px;height: 40px;" placeholder="Search By Name"/> -->
+    <table width="50%" border="1" cellspacing="0" align="center">
+        <thead>
+            <tr>
+                <th>Sr No.</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Gender</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+<script>
+    function checkrad(){
+        let male=document.querySelector("#radmale")
+        let female=document.querySelector("#radfemale")
+        let radio="";
+        if(male.checked==true){
+            radio+="male";
+        }
+        else if(female.checked==true){
+            radio+="female";
+        }
+        return radio;
+    }
+    function checkpass(){
+        let password1="";
+        let pass=document.querySelector("#txtpass").value;
+        let cpass=document.querySelector("#txtcpass").value;
+        if(pass!=cpass){
+            document.write="Please Check The Password And Confirm Password.";
+            event.preventDefault();
+        }
+        else{
+            password1+=pass;
+        }
+        return password1;
+    }
+    let form=document.querySelector("form")
+    form.addEventListener("submit",(event)=>{
+        let name=event.target.uname.value;
+        let email=event.target.email.value;
+        let phone=event.target.phone.value;
+        let gender=checkrad();
+        let password=checkpass();
+        let userobjdata={name,email,phone,gender,password};
+
+        let oldData=JSON.parse(localStorage.getItem("userrdata")) ?? []
+        oldData.push(userobjdata)
+
+        localStorage.setItem('userrdata',JSON.stringify(oldData))
+
+        event.target.reset();
+        showData();
+        event.preventDefault();
+
+    })
+
+    let tbody=document.querySelector("table tbody")
+    let showData=()=>{
+        let oldData=JSON.parse(localStorage.getItem("userrdata")) ?? []
+        let rows=''
+        oldData.forEach((v,i)=>{
+            rows+=`
+                    <tr>
+                        <td>${i+1}</td>
+                        <td>${v.name}</td>
+                        <td>${v.email}</td>
+                        <td>${v.phone}</td>
+                        <td>${v.gender}</td>
+                        <td>${v.password}</td>
+                    </tr>
+            `
+        })
+        tbody.innerHTML=rows;
+    }
+
+    showData();
+</script>
+</html>

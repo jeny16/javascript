@@ -1,0 +1,23 @@
+[
+    {"name": "John Smith", "gender": "Male", "roll_number": "A001", "standard": 10},
+    {"name": "Emily Johnson", "gender": "Female", "roll_number": "A002", "standard": 11},
+    {"name": "Michael Brown", "gender": "Male", "roll_number": "A003", "standard": 9},
+    {"name": "Sarah Davis", "gender": "Female", "roll_number": "A004", "standard": 12},
+    {"name": "David Wilson", "gender": "Male", "roll_number": "A005", "standard": 8},
+    {"name": "Emma Anderson", "gender": "Female", "roll_number": "A006", "standard": 10},
+    {"name": "Daniel Lee", "gender": "Male", "roll_number": "A007", "standard": 11},
+    {"name": "Olivia Martinez", "gender": "Female", "roll_number": "A008", "standard": 9},
+    {"name": "James Taylor", "gender": "Male", "roll_number": "A009", "standard": 12},
+    {"name": "Sophia Harris", "gender": "Female", "roll_number": "A010", "standard": 8},
+    {"name": "William Clark", "gender": "Male", "roll_number": "A011", "standard": 10},
+    {"name": "Ava Jackson", "gender": "Female", "roll_number": "A012", "standard": 11},
+    {"name": "Alexander White", "gender": "Male", "roll_number": "A013", "standard": 9},
+    {"name": "Mia Moore", "gender": "Female", "roll_number": "A014", "standard": 12},
+    {"name": "Liam Turner", "gender": "Male", "roll_number": "A015", "standard": 8},
+    {"name": "Charlotte Brown", "gender": "Female", "roll_number": "A016", "standard": 10},
+    {"name": "Benjamin Harris", "gender": "Male", "roll_number": "A017", "standard": 11},
+    {"name": "Amelia Wilson", "gender": "Female", "roll_number": "A018", "standard": 9},
+    {"name": "Henry Davis", "gender": "Male", "roll_number": "A019", "standard": 12},
+    {"name": "Ella Johnson", "gender": "Female", "roll_number": "A020", "standard": 8}
+  ]
+  

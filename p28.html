@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        function hians()
+        {
+            let a=document.getElementById("spantxt1").innerHTML;
+            let b=document.getElementById("spantxt2").innerHTML;
+            
+            
+
+            if(a > b){
+                document.getElementById("spanans").innerHTML="a is max";
+        }
+        
+        else if(a == b){
+            document.getElementById("spanans").innerHTML="a and b is equal.";
+        }
+        else if(a < b)
+        {
+            document.getElementById("spanans").innerHTML="a is min";
+        }
+
+        }
+    </script>
+
+<form>
+   
+    <label for="number">A:</label>
+    <input type="number" id="spantxt1" ><br><br>
+
+   
+    <label for="number">B:</label>
+    <input type="number" id="spantxt2" ><br><br>
+
+    <input type="button" onclick="hians()" value="Click me"> <br><br>   
+
+    ANS:<span id="spanans"></span><br><br>
+    <!-- <label for="ans">ANS:</label>
+    <input type="text" name="text" id="txtans"><br><br> -->
+</form>
+
+</body>
+</html>

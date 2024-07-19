@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> LOCAL STORAGE 2!!!!!!!!!!!!</title>
+    <style>
+        .container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        input {
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form name="sname" id="form1">
+            <label for="usernm"><b>USERNAME:</b></label>
+            <input type="text" name="uname" id="usernm" placeholder="USERNAME"><br>
+            <label for="idnum"><b>ID NUMBER:</b></label>
+            <input type="text" name="id_no" id="idnum" placeholder="ID NUMBER"><br>
+            <label for="sub1"><b>SUBJECT1:</b></label>
+            <input type="text" name="sbj1" id="sub1" placeholder="SUBJECT1"><br>
+            <label for="sub2"><b>SUBJECT2:</b></label>
+            <input type="text" name="sbj2" id="sub2" placeholder="SUBJECT2"><br>
+            <button type="submit" style="width: 20%;">Submit</button>
+        </form><br>
+    </div>
+    <table border="1" rules="all" width="80%">
+        <thead>
+            <tr>
+                <th>SR NO.</th>
+                <th>NAMES</th>
+                <th>ID NO.</th>
+                <th>SUB1</th>
+                <th>SUB2</th>
+            </tr>
+        </thead>
+        <tbody id="tableData">
+        </tbody>
+    </table>
+    <script>
+        const form = document.querySelector("form");
+        const tbody = document.querySelector("#tableData");
+
+function getData() {
+    const data = JSON.parse(localStorage.getItem("userrrrrdata")) ?? [];
+    let row = "";
+    data.forEach((user, i) => {
+        row += `
+        <tr>
+            <td>${i + 1}</td>
+            <td>${user.name}</td>
+            <td>${user.id_no}</td>
+            <td>${user.sbj1}</td>
+            <td>${user.sbj2}</td>
+        </tr>
+        `;
+    });
+    tbody.innerHTML = row;
+}
+
+form.addEventListener("submit", (event) => {
+    const name = event.target.uname.value;
+    const idNumber = event.target.idnum.value;
+    const subject1 = event.target.sub1.value;
+    const subject2 = event.target.sub2.value;
+
+    const userData = {
+        name,
+        id_no: idNumber,
+        sbj1: subject1,
+        sbj2: subject2
+    };
+
+    let storedData = JSON.parse(localStorage.getItem("userrrrrdata")) ?? [];
+    storedData.push(userData);
+
+    localStorage.setItem("userrrrrdata", JSON.stringify(storedData));
+    event.target.reset();
+    getData();
+    event.preventDefault();
+});
+
+getData();
+
+    </script>
+</body>
+</html>

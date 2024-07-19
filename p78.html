@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GETDATE 5!!</title>
+</head>
+<body>
+    <span id="res"></span>
+
+    <script>
+
+        function tme(){
+        const date = new Date();
+        const daynme = ["MONDAY","TUESDAY","WEDNESDAY","THURSDAY","FRIDAY","SATURDAY","SUNDAY"];
+        const day = daynme[date.getDay()];
+        const hours = date.getHours() % 12 || 12 ;
+        const minute = date.getMinutes();
+        const sec =  date.getSeconds();
+        const d = date.getDate();
+        const monthNames = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const mo = monthNames[date.getMonth()];
+        const ye = date.getFullYear();
+        const ap = date.getHours() >= 12 ? 'PM' : 'AM';
+
+        const result = ` ${d} ${mo} ${ye} <br> DAY: ${day} <br> TIME::  ${hours} : ${minute} : ${sec} ${ap}`;
+
+
+        document.getElementById("res").innerHTML= result ;
+    
+}
+setInterval(tme,1000);   
+  
+    </script>
+</body>
+</html>

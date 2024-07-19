@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>image 2</title>
+</head>
+<body>
+    <script>
+        function hiimg1(){
+            document.getElementById("ans").innerHTML="APPLE";
+            document.images[0].src = "a.jpg"
+        }
+        function hiimg2(){
+            document.getElementById("ans").innerHTML="BALL";
+            document.images[0].src = "b.jpg"
+        }
+        function hiimg3(){
+            document.getElementById("ans").innerHTML="CAT";
+            document.images[0].src = "c.jpg"
+        }
+        function hiimg4(){
+            document.getElementById("ans").innerHTML="DOG";
+            document.images[0].src = "download.jpg"
+        }
+        function hiimg5(){
+            document.getElementById("ans").innerHTML="ELEPHANT";
+            document.images[0].src = "e.jpg"
+        }
+        function hiimg6(){
+            document.getElementById("ans").innerHTML="FISH";
+            document.images[0].src = "f.jpg"
+        }
+    </script>
+
+    <form>
+                <input type="button" value="A" onclick="hiimg1()">
+                <input type="button" value="B" onclick="hiimg2()">
+                <input type="button" value="C" onclick="hiimg3()">
+                <input type="button" value="D" onclick="hiimg4()">
+                <input type="button" value="E" onclick="hiimg5()">
+                <input type="button" value="F" onclick="hiimg6()">
+                <br><br>
+                :  <span id="ans"></span>
+                <br><br>
+                <img width="200" height="200">
+    </form>
+</body>
+</html>

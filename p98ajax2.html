@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX 1!!</title>
+</head>
+<body>
+    <script>
+        fetch("p99ajax.json")
+        .then(response=>response.json())
+        .then((data)=>{
+            const std = prompt("Enter the standard (e.g., 8, 9, 10, 11, 12):");
+            if (std) {
+        
+                const a = data.filter(item => item.standard == std);
+
+                if (a.length > 0) {
+                    for (var x in a) {
+                        let b = `${a[x].roll_number} - ${a[x].name} - ${a[x].standard} - ${a[x].gender} <br>`;
+                        document.write(b);
+                    }
+                } else {
+                    document.write("No data found for the entered standard.");
+                }
+            }})
+        .catch((error) => console.log(error));
+        </script>
+        
+        
+</body>
+</html>

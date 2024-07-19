@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tabel using span</title>
+</head>
+<body>
+
+    <label for="number">A:</label>
+    <input type="text" id="num1"><br><br>
+
+    <input type="button" onclick="table()" value="CLICK ME"><br><br>
+
+        TABLE:<br>
+        <span id="tbl"></span><br>
+    
+    <script>
+        function table(){
+
+            var a=parseInt(document.getElementById("num1").value);
+
+            var table = "";
+            for(var i=1;i<=10;i++){
+                table += (i*a) + "<br>"
+            }
+
+            document.getElementById("tbl").innerHTML=table;
+        }
+    </script>
+</body>
+</html> 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>three text box uc lc num</title>
+</head>
+<body>
+    <script>
+        function ans1(event) {
+            let b = event.keyCode;
+        
+            if(b >= 97 && b <= 122)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }  
+        }
+
+        function ans2(event){
+            let b = event.keyCode;
+        
+        if(b >= 65 && b <= 90)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        }
+
+        function ans3(event){
+            let b = event.keyCode;
+        
+        if(b >= 48 && b <= 57)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+        }
+    </script>
+
+    <label for="s1">STRING (LOWER CASE):</label>
+    <input type="text" id="s1" onkeypress="return ans1(event)"> <br><br>
+
+    <label for="w1">STRING (UPPER CASE):</label>
+    <input type="text" id="w1" onkeypress="return ans2(event)"> <br><br>
+
+    <label for="c1">NUMBER:</label>
+    <input type="text" id="c1" onkeypress="return ans3(event)" > <br><br>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factorial bu using span!!!  </title>
+</head>
+<body>
+    <script>
+        function factorial(){
+            var a=parseInt(document.getElementById("number").value);
+            
+            let factorial=1;
+            for (let i = 2; i <= a; i++) {
+                factorial *= i;
+            }
+
+            document.getElementById("spanans").innerHTML=factorial;
+
+        }
+
+    </script>
+
+    <label for="number">A:</label>
+    <input type="text" id="number"><br><br>
+
+    <button onclick="factorial()">CLICK ON ME</button><br><br>
+
+    factorian of given number is:<span id="spanans"></span><br><br>
+
+
+
+    
+</body>
+</html>
+
+

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>exclude vowels from the strings!!!</title>
+</head>
+<body>
+    
+    <script>
+            function hichar(){
+
+                let a=document.getElementById("str").value;
+                let vowels = "aeiouAEIOU";
+                let b = "";
+                for(let i=0; i<a.length; i++){
+                    if(!vowels.includes(a[i]))
+                    {
+                        b += a[i];
+                    }
+            }
+            document.getElementById("span1").innerHTML=b;
+            }
+
+    </script>
+   
+    
+    <label class="label1" for="string">A:</label>
+    <input type="text" id="str"><br><br>
+
+    <input type="button" value="CLICKME" onclick="hichar()"> <br><br>
+
+    <span id="span1"></span><br><br> 
+    
+</body>
+</html>
+
+<!-- find no of vowels in a string -->

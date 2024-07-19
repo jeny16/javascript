@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM NUMBER!!</title>
+</head>
+<body>
+    <script>
+    function hiab(){
+        
+            const randomNumber = Math.floor(Math.random() * (100 - 1 + 1)) + 1;
+            document.getElementById("txtnum").value=randomNumber;
+        }
+    </script>
+    <br><br>
+    <label for="n1">NUM:</label>
+    <input type="text" id="txtnum" readonly> <br><br><br>
+
+    <button onclick="hiab()">CLICK ME</button>
+</body>
+</html>

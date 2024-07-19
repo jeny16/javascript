@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation Form</title>
+</head>
+<body>
+    <label for="i1">NAME:</label>
+    <input type="text" id="i1"> <br><br>
+
+    <label for="p1">PASSWORD:</label>
+    <input type="password" id="t1"> <br><br>
+
+    <label for="p2">REPASSWD:</label>
+    <input type="password" id="t2"> <br><br>
+
+    <input type="button" value="CLICK ME" onclick="hi1()">
+
+    <script>
+        function hi1() {
+            let inputValue = document.getElementById("i1").value;
+            let p1 = document.getElementById("t1").value;
+            let p2 = document.getElementById("t2").value;
+            if (inputValue === "") {
+                alert("* ENTER YOUR NAME *");
+            }
+            else if(p1 !== p2){
+                alert("check your password!!!!");
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="common.css">
+    <title>find spaces in strings!!!</title>
+</head>
+<body>
+    
+    <script>
+            function hichar(){
+
+                let a=document.getElementById("str").value;
+                let b = "0";
+
+                for(let i=0;i<a.length;i++){
+                if(a[i] === " "){
+                    b++;
+                }
+            }
+            document.getElementById("span1").innerHTML=b;
+            }
+
+    </script>
+   <div>
+    
+    <label class="label1" for="string">A:</label>
+    <input type="text" id="str"><br><br>
+
+    <input type="button" value="CLICKME" onclick="hichar()"> <br><br>
+
+    <span id="span1"></span><br><br> 
+    
+    </div>
+</body>
+</html>
+

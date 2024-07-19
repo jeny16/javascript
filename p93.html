@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keypress</title>
+</head>
+<body>
+    <script>
+        function ans() {
+            let s1Input = document.getElementById("s1").value;
+            let w1Input = '';
+            let c1Input = '';
+
+            for (let i = 0; i < s1Input.length; i++) {
+                let currentChar = s1Input[i];
+
+                if (currentChar >= 'A' && currentChar <= 'Z') { 
+                    if (currentChar === 'A' || currentChar === 'E' || currentChar === 'I' || currentChar === 'O' || currentChar === 'U') {
+                        w1Input += currentChar;
+                    } else {
+                        c1Input += currentChar;
+                    }
+                }
+            }
+            document.getElementById("w1").value = w1Input;
+            document.getElementById("c1").value = c1Input;
+        }
+    </script>
+
+    <label for="s1">STRING:</label>
+    <input type="text" id="s1" oninput="ans()"> <br><br>
+
+    <label for="w1">VOWELS:</label>
+    <input type="text" id="w1"> <br><br>
+
+    <label for="c1">CONSONANTS:</label>
+    <input type="text" id="c1"> <br><br>
+</body>
+</html>

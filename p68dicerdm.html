@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DICE WITH RANDOM NUMBER!!</title>
+</head>
+<body>
+    <script>
+        let randomNumber = "";
+    
+        function dice(){
+            randomNumber = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+            document.getElementById("num").value = randomNumber;
+            if(randomNumber == 1){
+                document.getElementById("diceImage").src ="images/DICE/1.jpg"
+            }
+            else if(randomNumber == 2){
+                document.getElementById("diceImage").src ="images/DICE/2.jpg"
+            }
+            else if(randomNumber == 3){
+                document.getElementById("diceImage").src ="images/DICE/3.jpg"
+            }
+            else if(randomNumber == 4){
+                document.getElementById("diceImage").src ="images/DICE/4.jpg"
+            }
+            else if(randomNumber == 5){
+                document.getElementById("diceImage").src ="images/DICE/5.jpg"
+            }
+            else if(randomNumber == 6){
+                document.getElementById("diceImage").src ="images/DICE/6.jpg"
+            }
+        }
+    </script>
+
+    <label for="">DICE NUMBER</label>
+    <input type="text" id="num"> <br><br>
+
+    <input type="button" value="CLICK ME" onclick="dice();"> <br><br>
+
+    <!-- Specify the IDs for the images -->
+    <img src="" id="diceImage" width="200" height="200">
+  
+    
+</body>
+</html>
+

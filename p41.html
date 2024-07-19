@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lower to upper!!!!!!</title>
+</head>
+<body>
+    
+    <script>
+        function hichar(){
+
+            let a=document.getElementById("str").value;
+            let b = "";
+            for(let i=0; i<a.length; i++){
+                if(a[i] === a[i].toLowerCase()){
+                    b += a[i].toUpperCase();    
+                }
+                else if(a[i] === a[i].toUpperCase()){
+                    b += a[i].toLowerCase();
+                }   
+        }
+        document.getElementById("span1").innerHTML=b;
+        
+        }
+
+</script>
+
+<label class="label1" for="string">A:</label>
+<input type="text" id="str"><br><br>
+
+<input type="button" value="CLICKME" onclick="hichar()"> <br><br>
+
+<span id="span1"></span><br><br> 
+
+<span id="span2"></span><br><br> 
+</body>
+</html>
+

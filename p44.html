@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>print letter on given index!!!!!</title>
+</head>
+<body>
+    
+    <script>
+        function hichar(){
+
+            let a=document.getElementById("str").value;
+            let b=parseInt(document.getElementById("idx").value);
+            let c= "";
+            
+                if(0 < b <= a.length){
+                    c = a[b];
+                }
+                else{
+                    c = "sorry your index number higher than string's index!!!!!!!!!!"
+                }
+                
+        document.getElementById("span1").innerHTML=c;
+        
+        }
+
+</script>
+
+<label for="string">ENTER A STRING:</label>
+<input type="text" id="str"><br><br>
+
+<label for="index">ENTER A INDEX NUMBER:</label>
+<input type="number" id="idx"><br><br>
+
+<input type="button" value="CLICKME" onclick="hichar()"> <br><br>
+
+<span id="span1"></span><br><br> 
+<span id="span2"></span><br><br> 
+
+</body>
+</html>
+
+
+

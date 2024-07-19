@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRAFFIC SIGNAL</title>
+    <style>
+        .signal {
+            width: 50px;
+            height: 150px;
+            margin: 10px;
+            margin-top: 50px;
+            margin-left: 100px;
+            border: 2px solid black;
+            border-radius:25px;
+            padding-right: 20px;
+            padding-left: 10px;
+            padding-top: 10px;
+            padding-bottom: 30px;
+        
+        }
+        .light {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 5px;
+        }
+        .red {
+            background-color: red;
+        }
+        .yellow {
+            background-color: yellow;
+        }
+        .green {
+            background-color: green;
+        }
+        </style>
+</head>
+<body>
+    <h1>TRAFFIC SIGNAL</h1>
+    <div class="signal">
+        <div class="light red" id="rd"></div>
+        <div class="light yellow" id="ylw"></div>
+        <div class="light green" id="grn"></div>
+    </div>
+    <script>
+        function changeLights() {
+            const redLight = document.getElementById('rd');
+            const yellowLight = document.getElementById('ylw');
+            const greenLight = document.getElementById('grn');
+
+            redLight.style.backgroundColor = 'red';
+            yellowLight.style.backgroundColor = 'gray';
+            greenLight.style.backgroundColor = 'gray';
+
+            setTimeout(() => {
+                redLight.style.backgroundColor = 'gray';
+                yellowLight.style.backgroundColor = 'yellow';
+                greenLight.style.backgroundColor = 'gray';
+
+                setTimeout(() => {
+                    redLight.style.backgroundColor = 'gray';
+                    yellowLight.style.backgroundColor = 'gray';
+                    greenLight.style.backgroundColor = 'green';
+
+                    setTimeout(() => {
+                        redLight.style.backgroundColor = 'red';
+                        yellowLight.style.backgroundColor = 'gray';
+                        greenLight.style.backgroundColor = 'gray';
+
+                        setTimeout(changeLights, 3000);
+                    }, 2000);
+                }, 3000);
+            }, 3000);
+        }
+        changeLights();
+    </script>
+</body>
+</html>

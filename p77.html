@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    </title>
+</head>
+<body>
+    <span id="res"></span>
+
+    <script>
+
+        function tme(){
+        const date = new Date();
+        const hours = date.getHours() % 12 || 12 ;
+        const minute = date.getMinutes();
+        const sec =  date.getSeconds();
+
+        const result = ` Hour: ${hours} <br> Minute: ${minute} <br> Second: ${sec}`;
+
+        document.getElementById("res").innerHTML= result ;
+    
+}
+setInterval(tme,1000);   
+    </script>
+</body>
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>assp-sidi</title>
+</head>
+<body>
+    <style>
+        #sal{
+           margin-top: -320px;
+           margin-left: 350px;
+        }
+    </style>
+    <script>
+
+        let randomNumber1 = 0;
+        let randomNumber2 = 0;
+        let t1 = 0;
+        let t2 = 0;
+        let closestSnake = null;
+            let minDistance = Number.MAX_VALUE;
+        const ladders = [
+            { start: 4, end: 25 },
+            { start: 13, end: 46 },
+            { start: 33, end: 49 },
+            { start: 42, end: 63 },
+            { start: 50, end: 69 },
+            { start: 62, end: 81 },
+            { start: 74, end: 92 },
+            
+        ];
+
+        const snakes = [
+            { head: 40, tail: 3 },
+            { head: 27, tail: 5 },
+            { head: 43, tail: 18 },
+            { head: 54, tail: 31 },
+            { head: 66, tail: 45 },
+            { head: 99, tail: 41 },
+        ];
+
+        function calculateDistance(position, snake) {
+            return Math.abs(position - snake.head);
+        }
+
+        function sl1(){
+            randomNumber1 = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+            document.getElementById("p1").value = randomNumber1;
+            t1 += randomNumber1;
+
+            for (const ladder of ladders) {
+                if (t1 === ladder.start) {
+                    t1 = ladder.end;
+                    document.getElementById("res").innerHTML="player 1 climbed a ladder.."
+                    break;
+                }
+            }
+
+            for (const snake of snakes) {
+                if (t1 === snake.head) {
+                    t1 = snake.tail;
+                    document.getElementById("res").innerHTML = "Player 1 landed on a snake's head..";
+                    break;
+                }
+            }
+            for (const snake of snakes) {
+                const distance = calculateDistance(t1, snake);
+                if (distance < minDistance) {
+                    closestSnake = snake;
+                    minDistance = distance;
+                }
+            }
+            if (closestSnake) {
+                document.getElementById("res").innerHTML = "Player 1 is closest to a snake's head!";
+            }
+            chkwinner();
+           }
+
+        function sl2(){
+
+            randomNumber2 = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
+            document.getElementById("p2").value = randomNumber2;
+            t2 += randomNumber2;
+
+            for (const ladder of ladders) {
+                if (t2 === ladder.start) {
+                    t2 = ladder.end;
+                    document.getElementById("res").innerHTML="player 2 climbed a ladder.."
+                    break;
+                }
+            }
+            for (const snake of snakes) {
+                if (t2 === snake.head) {
+                    t2 = snake.tail;
+                    document.getElementById("res").innerHTML = "Player 2 landed on a snake's head..";
+                    break;
+                }
+            }
+            chkwinner();
+        }
+
+
+        function chkwinner(){
+        if(t1 >= 100){
+            document.getElementById("res").innerHTML="player 1 is winner!!"
+        }
+        else if (t2 >= 100){
+            document.getElementById("res").innerHTML="player 2 is winner!!"
+        }
+
+    }
+    </script>
+    <img src="images/SNAKE AND LADDER.jpg" width="300" height="300" > <br><br>
+    
+    <div id="sal">
+    
+    <label for="p1">PLAYER 1:</label> <br><br>
+    <input type="text" name="" id="p1"> <br><br>
+    <input type="button" value="P1" onclick="sl1()"> <br><br>
+
+    <label for="p2">PLAYER 2:</label> <br><br>
+    <input type="text" name="" id="p2"> <br><br>
+    <input type="button" value="P2" onclick="sl2()"> <br><br>
+
+    <span id="res"></span> <br><br>
+
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULATOR</title>
+</head>
+<body>
+
+    <style>
+    *{
+        margin-left: 5px;
+    }
+
+    #calc{
+        width: 130px;
+    }
+   
+    .btn{
+        width: 40px;
+        height: 30px;
+        margin: 0px;
+        margin-top: -5px;
+        border: 1px solid black;
+    }
+
+    .anbtn{
+        width: 50px;
+        height: 30px;
+        margin: 0px;
+        margin-top: -5px;
+        border: 1px solid black;
+        border-radius: 3px;
+        margin-left: 0px;
+    }
+    </style>
+    
+    <script>
+        //let var const
+
+        let op="",no1=0,z="";
+
+        function hians1(){
+             document.getElementById("data").value+="1";
+        }
+
+        function hians2(){
+            document.getElementById("data").value += "2";
+        }
+
+        function hians3(){
+            document.getElementById("data").value += "3";
+        }
+
+        function hians4(){
+            document.getElementById("data").value += "4";
+        }
+
+        function hians5(){
+            document.getElementById("data").value += "5";
+        }
+
+        function hians6(){
+            document.getElementById("data").value += "6";
+        }
+
+        function hians7(){
+            document.getElementById("data").value += "7";
+        }
+
+        function hians8(){
+            document.getElementById("data").value += "8";
+        }
+
+        function hians9(){
+            document.getElementById("data").value += "9";
+        }
+
+        function hians0(){
+            document.getElementById("data").value += "0";
+        }
+
+        function add(){
+            no1= parseFloat(document.getElementById("data").value);
+           op="+";
+           document.getElementById("data").value="";
+        }
+
+        function dec(){
+            no1= parseFloat(document.getElementById("data").value);
+           op="-";
+           document.getElementById("data").value="";      
+        }
+
+        function mul(){
+           no1= parseFloat(document.getElementById("data").value);
+           op="*";
+           document.getElementById("data").value="";
+        }
+
+        function divi(){
+            no1= parseFloat(document.getElementById("data").value);
+           op="/";
+           document.getElementById("data").value="";        
+        }
+
+        function hipn(){
+            no1= parseFloat(document.getElementById("data").value);
+            no1 = no1 * -1;
+            document.getElementById("data").value=""; 
+        }
+
+        function hix() {
+            no1= parseFloat(document.getElementById("data").value);
+            op="1/x";    
+            document.getElementById("data").value=""; 
+        }
+
+        function hidot(){
+                let no1 = document.getElementById("data").value;
+                    if (no1.indexOf(".") === -1) {
+                    document.getElementById("data").value += ".";
+                    }
+                }
+
+        function hisqrt(){
+                let no1 = parseFloat(document.getElementById("data").value);
+                no1 = Math.sqrt(no1);
+                document.getElementById("data").value=no1; 
+        }       
+
+        function ans(){
+            let no2= parseFloat(document.getElementById("data").value);
+            
+            if(op ==="+"){
+                parseFloat(document.getElementById("data").value = no1+no2);
+            }
+            else if(op ==="-"){
+                parseFloat(document.getElementById("data").value =no1-no2);
+            }
+            else if(op ==="*"){
+                parseFloat(document.getElementById("data").value =no1*no2);
+            }
+            else if(op ==="/"){
+                parseFloat(document.getElementById("data").value =no1/no2);
+            }
+            else if(op ==="1/x"){
+                parseFloat(document.getElementById("data").value = 1/no1);
+            }
+            else if(op ==="+/-"){
+                parseFloat(document.getElementById("data").value = no1 * -1);
+            }
+            
+        }
+
+
+        function clr(){
+                document.getElementById("data").value="";
+        }
+
+    </script> 
+
+    <table id="pr1">
+        <tr>
+    <label for="data">CALCULATOR:</label><br><br>
+    <input type="text" id="data"> <br> <br>
+        </tr>
+    
+        <tr>
+    <input  type="button" value="+" class="btn" onclick="add()"> 
+    <input  type="button" value="-" class="btn" onclick="dec()">
+    <input  type="button" value="/" class="btn" onclick="divi()">
+    <input type="button" value="*" class="btn" onclick="mul()">
+    <input type="button" value="+\-" class="btn" onclick="hipn()">
+    <input type="button" value="1/x" class="btn" onclick="hix()">
+    <br><br>
+        </tr>
+        <tr>
+    <input type="button" value="1" id="num1" class="btn" onclick="hians1()">
+    <input type="button" value="2" id="num2" class="btn" onclick="hians2()">
+    <input type="button" value="3" id="num3" class="btn" onclick="hians3()">
+    <input type="button" value="4" id="num4" class="btn" onclick="hians4()">
+    <input type="button" value="5" id="num5" class="btn" onclick="hians5()">
+    <input type="button" value="sqrt" id="sqrt" class="btn" onclick="hisqrt()">
+    <br><br>
+</tr>
+<tr>
+    <input type="button" value="6" id="num6" class="btn" onclick="hians6()">
+    <input type="button" value="7" id="num7" class="btn" onclick="hians7()">
+    <input type="button" value="8" id="num8" class="btn" onclick="hians8()">
+    <input type="button" value="9" id="num9" class="btn" onclick="hians9()">
+    <input type="button" value="0" id="num0" class="btn" onclick="hians0()"> 
+    <input type="button" value="." id="dot" class="btn" onclick="hidot()">
+     <br><br>
+        </tr>
+        
+        
+</table>
+    <input type="button" value="ANS" class="anbtn" onclick="ans()">
+    <input type="button" value="CLR" class="anbtn" onclick="clr()"><BR><BR>
+</body>
+</html>

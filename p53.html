@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keypress</title>
+</head>
+<body>
+
+    <script>      
+    // aleart !!!!!!!!!! 
+    
+    // function funhi(event) {
+    //     alert(event.keyCode);
+    // }
+
+    function funhi(event){
+        const a = event.key;
+        const b = event.keyCode;
+        let c=  `Key Name: ${keyName} Key Code: ${keyCode}`;
+
+        document.getElementById("result").textContent=c;
+    }
+
+
+
+</script>
+
+<label for="nm">NAME:</label>
+<input type="text" id="nm" onkeypress="funhi(event)"> <br><br><br>
+
+<span id="result"></span>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RANDOM NUMBER 2!!</title>
+</head>
+<body onload="hiab();">
+    <script>
+    let randomNumber1, randomNumber2,addi; 
+
+    function hiab() {
+        randomNumber1 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+        randomNumber2 = Math.floor(Math.random() * (10 - 1 + 1)) + 1;
+        addi = Math.floor(Math.random() * (20 - 1 + 1)) + 2;
+
+        document.getElementById("txtnum1").value = randomNumber1;
+        document.getElementById("txtnum2").value = randomNumber2;
+        document.getElementById("add").value = addi;
+        
+    }
+
+    function hiad(){
+
+        let c = randomNumber1 + randomNumber2;
+
+        if(c == addi ){
+            document.getElementById("res").innerHTML="😊 yasss!!";
+        }
+        else{
+            document.getElementById("res").innerHTML ="😞 ERROR!!!!!!!";
+        }
+    }
+
+    </script>
+
+    <br><br>
+    <label for="n1">NUM1:</label>
+    <input type="text" id="txtnum1" readonly> <br><br><br>
+    <label for="n1">NUM2:</label>
+    <input type="text" id="txtnum2" readonly> <br><br><br>
+    
+    <button onclick="hiad()">CLICK ME</button> <br><br>
+
+    <label for="">ADD:</label>
+    <input type="text" name="" id="add"> <br><br>
+
+    <span id="res"> </span> 
+</body>
+</html>
+
