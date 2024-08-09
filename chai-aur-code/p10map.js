@@ -1,22 +1,14 @@
-// const myObject = {
-//     'game':'NFS'
-//     'game2':'spiderman'
-// }
+const myNums = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-// for (const [key, value] of myObject) {
-//     console.log(key, ":-" ,value);
-// }
+// const newNums = myNums.map( (num) => num + 10)
 
+//// chaining using map filter 
+const newNums = myNums
+                      .map((num) => num * 10)
+                      .map((num) => num + 1)
+                      .filter((num) => num > 40)
 
-const obj = {
-    js: 'javascript',
-    cpp : 'c++',
-    rb : 'ruby',
-    swift : 'swift by apple'
-}
+console.log(newNums);
 
-
-for (const key in obj) {
-    console.log(`${key} shortcut is for ${obj[key]}`);
-}
+/// same rule as a filter if there is a scope then you have to use the 'return' keyword to return a value
 
