@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM | Document Object Model</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="parent">
+        <div class="day">monday</div>
+        <div class="day">tuesday</div>
+        <div class="day">wednesday</div>
+        <div class="day">thursday</div>
+        <div class="day">friday</div>
+        <div class="day">saturday</div>
+        <div class="day">sunday</div>
+    </div>
+    <script>
+        // const Parent = document.querySelector('.parent')
+        // console.log(Parent);
+        // console.log(Parent.children);
+        // console.log(Parent.children[6]);
+        // console.log(Parent.children[6].innerHTML);
+        
+        // for (let i = 0; i < Parent.children.length; i++) {
+        //     console.log(Parent.children[i].innerHTML);
+        // }
+
+        // Parent.children[1].style.color = "orange"
+        // console.log(Parent.firstElementChild);
+        // console.log(Parent.lastElementChild);
+
+        const div = document.createElement('div')
+        console.log(div);
+        div.className = "main"
+        div.id = Math.round(Math.random() * 10 + 1)
+        div.setAttribute("title", "generated title")
+        div.style.backgroundcolor = "green"
+        div.style.padding = "12px"
+        div.innerText = "chai aur coffee"
+
+        // here setattribute is better than the  last three to update innerhtml
+        // innert text call values and change it after the call
+        // setatt delete old one ,so there is no confusion ****
+        
+        const addText = document.createTextNode("chai aur code")
+        div.appendChild(addText)
+    
+        
+    </script>
+</body>
+</html>
