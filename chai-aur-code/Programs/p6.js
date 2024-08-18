@@ -1,26 +1,26 @@
-// const score = 200
+const score = 200
 
-// if(score > 100){
-//     var power = "fly"
-//     console.log(`User Power : ${power}`);
+if(score > 100){
+    var power = "fly"
+    console.log(`User Power : ${power}`);
     
-// }
+}
 
-// console.log(`User Power ${power}`);
+console.log(`User Power ${power}`);
 
 // ################### var related ##########
-// const one = 1;
+const one = 1;
 
-// if(one > 0){
-//     var jeny = "10"
-//     let b = "20"
-//     const c = "30"
-//     console.log(`hi ${jeny} `)
+if(one > 0){
+    var jeny = "10"
+    let b = "20"
+    const c = "30"
+    console.log(`hi ${jeny} `)
 
-// }
+}
 
 
-// console.log(`hii ${jeny}`);
+console.log(`hii ${jeny}`);
 
 ////////// control flow /////////////////
 
